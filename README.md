@@ -22,9 +22,7 @@ Run `rails db:seed` to do the first database populate;
 - ☑️ crud endpoints for notifications
 - ☑️ subscribing notifications
 
-  
-
-### Models
+## Models
 
 - ✅ Players:
   - name:
@@ -33,11 +31,19 @@ Run `rails db:seed` to do the first database populate;
   - age
   - position
 - ✅ Notifications:
-  - player_id
+  - Player
   - message
-- 🆕 Teams:
+- ✅ 🆕 Teams:
   - name
   - acronym
+ - ☑️ 🆕 User
+	 - Name
+	 - E-mail
+	 - Password
+	 - Role (Admin or Supporter)
+ - ☑️ 🆕 User Favorite Players
+	 - User
+	 - Player 
 
   
 
@@ -45,18 +51,18 @@ Run `rails db:seed` to do the first database populate;
 
 Tasks created to be runned by background jobs.
   
-#### Update Players
+#### ✅ Update Players
 Update players data directly from API data. Command:
 ```
 rails players:update
 ```
 
 
-### ☑️ there should be a task responsible for deleting notifications older then one week[](https://realfevr.github.io/challenge/#there-should-be-a-task-responsible-for-deleting-notifications-older-then-one-week)
+#### ☑️ there should be a task responsible for deleting notifications older then one week[](https://realfevr.github.io/challenge/#there-should-be-a-task-responsible-for-deleting-notifications-older-then-one-week)
 
   
 
-### ☑️ a user should be notified when a notification for the players he subscribed is triggered[](https://realfevr.github.io/challenge/#a-user-should-be-notified-when-a-notification-for-the-players-he-subscribed-is-triggered)
+#### ☑️ a user should be notified when a notification for the players he subscribed is triggered[](https://realfevr.github.io/challenge/#a-user-should-be-notified-when-a-notification-for-the-players-he-subscribed-is-triggered)
 
   
 
