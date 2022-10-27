@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   enum role: %i[admin supporter]
 
+  has_many :user_favorite_players, dependent: :destroy
+
+  def favorite_players = user_favorite_players
+
 end

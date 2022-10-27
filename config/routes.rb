@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_favorite_players
   devise_for :users
   resources :teams
   resources :notifications

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_favorite_player %>
+
+<div>
+  <%= link_to "Edit this user favorite player", edit_user_favorite_player_path(@user_favorite_player) %> |
+  <%= link_to "Back to user favorite players", user_favorite_players_path %>
+
+  <%= button_to "Destroy this user favorite player", @user_favorite_player, method: :delete %>
+</div>
