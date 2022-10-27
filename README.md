@@ -36,11 +36,11 @@ Run `rails db:seed` to do the first database populate;
 - ✅ 🆕 Teams:
   - name
   - acronym
- - ☑️ 🆕 User
+ - ✅ 🆕 User
 	 - Name
 	 - E-mail
 	 - Password
-	 - Role (Admin or Supporter)
+	 - Role (Admin, Supporter)
  - ☑️ 🆕 User Favorite Players
 	 - User
 	 - Player 
