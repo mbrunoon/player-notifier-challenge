@@ -6,6 +6,14 @@ Every football supporter wants to know what’s happening with their favorite pl
 - Ruby 3.2
 - Ruby on Rails 7.0.4
 
+## Environment Variables
+```
+MAILER_USERNAME = email@email.com
+MAILER_PASSWORD = yourapikeycode
+MAILER_DOMAIN = yourdomain.com
+MAILER_ADDRESS = your-smtp-address.com
+```
+
 ### Database seed
 
 Run `rails db:seed` to do the first database populate;
