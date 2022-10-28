@@ -1,12 +1,15 @@
 one:
+  user: one
   player: one
   message: MyText
 
 two:
+  user: two
   player: two
   message: MyText
 
 deleted:
+  user: one
   player: one
   message: DeletedMessage
   deleted_at: <%= DateTime.now %>
