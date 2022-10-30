@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Notifications</h1>
+
+<div id="supporter_notifications">
+  <% @supporter_notifications.each do |notification| %>
+    <%= render partial: "notification", locals: { notification: notification } %>    
+  <% end %>
+</div>
+
+<%= link_to "New notification", new_supporter_notification_path(current_user) %>

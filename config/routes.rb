@@ -1,11 +1,20 @@
-Rails.application.routes.draw do
-  resources :user_favorite_players
-  devise_for :users
-  resources :teams
-  resources :notifications
-  resources :players
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+Rails.application.routes.draw do  
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "pages#index"
+
+  devise_for :users   
+
+  namespace :supporter do    
+    resources :players, only: %i[index show]
+    resources :user_favorite_players, as: 'favorite_players', only: %i[index create destroy]
+    resources :notifications, only: %i[index new create]
+  end
+
+  namespace :admin do
+    resources :user_favorite_players  
+    resources :teams
+    resources :notifications
+    resources :players  
+  end  
+
 end

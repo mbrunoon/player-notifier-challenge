@@ -1,0 +1,17 @@
+<%= form_with(model: supporter_user_favorite_player) do |form| %>
+  <% if supporter_user_favorite_player.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(supporter_user_favorite_player.errors.count, "error") %> prohibited this supporter_user_favorite_player from being saved:</h2>
+
+      <ul>
+        <% supporter_user_favorite_player.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

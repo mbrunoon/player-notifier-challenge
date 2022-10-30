@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Players</h1>
+
+<div id="supporter_players">
+  <% @players.each do |player| %>
+    <%= render partial: "player", locals: { player: player } %>
+    <p>
+      <%= link_to "Show", supporter_player_path(player) %>
+    </p>
+  <% end %>
+</div>

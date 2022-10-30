@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User favorite players</h1>
+
+<div id="supporter_user_favorite_players">
+  <% @supporter_user_favorite_players.each do |supporter_user_favorite_player| %>
+    <%= render supporter_user_favorite_player %>
+    <p>
+      <%= link_to "Show this user favorite player", supporter_user_favorite_player %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user favorite player", new_supporter_user_favorite_player_path %>
