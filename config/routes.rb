@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  devise_for :users   
+  devise_for :users    
 
   namespace :supporter do    
     resources :players, only: %i[index show]

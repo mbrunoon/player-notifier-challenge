@@ -55,8 +55,9 @@ end
 
 # Auth
 gem 'devise'
+gem 'devise-jwt'
 
-
+gem 'rack-cors'
 
 group :development, :test do
   gem 'dotenv-rails'
