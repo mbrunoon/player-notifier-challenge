@@ -1,7 +1,11 @@
 require "test_helper"
 
 class Supporter::PlayersControllerTest < ActionDispatch::IntegrationTest
+  
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    sign_in users(:one)
     @player = players(:one)
   end
 
