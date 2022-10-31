@@ -9,11 +9,17 @@ one: {
   email: "one@one.com",
   encrypted_password:  "123456789!"
 }
-# column: value
-#
+
 two: {
   name: "Two",
   email: "two@two.com",
   encrypted_password:  "123456789!"  
 }
-# column: value
+
+admin: {
+  name: "Admin",
+  email: "admin@admin.com",
+  encrypted_password:  "123456789!",
+  role: "admin"
+}
+

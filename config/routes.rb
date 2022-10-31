@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :user_favorite_players  
+    resources :players
     resources :teams
     resources :notifications
-    resources :players  
+    resources :user_favorite_players, as: 'favorite_players'          
   end  
 
 end
