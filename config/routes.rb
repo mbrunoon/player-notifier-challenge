@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :notifications, only: %i[index new create]
   end
 
-  namespace :admin do
+  namespace :admin do    
     resources :players
     resources :teams
     resources :notifications

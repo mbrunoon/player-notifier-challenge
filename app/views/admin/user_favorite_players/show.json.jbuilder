@@ -1,0 +1,1 @@
+json.partial! "admin_user_favorite_players/admin_user_favorite_player", admin_user_favorite_player: @admin_user_favorite_player
