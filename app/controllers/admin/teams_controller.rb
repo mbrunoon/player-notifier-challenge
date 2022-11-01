@@ -1,6 +1,6 @@
 class Admin::TeamsController < ApplicationController
   
-include Admin
+  include Admin
   
   before_action :set_team, only: %i[ show edit update destroy ]
   

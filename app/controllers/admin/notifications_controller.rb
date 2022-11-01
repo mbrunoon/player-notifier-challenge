@@ -1,4 +1,7 @@
 class Admin::NotificationsController < ApplicationController
+
+  include Admin
+
   before_action :set_notification, only: %i[ show edit update destroy ]  
 
   def index
