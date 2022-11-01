@@ -13,4 +13,8 @@ class User < ApplicationRecord
 
   def favorite_players = user_favorite_players
 
+  def generate_jwt
+    JWT.encode({id: id,exp: 60.day.from_now.to_i}, ENV["DEVISE_JWT_SECRET_KEY"])
+  end
+
 end

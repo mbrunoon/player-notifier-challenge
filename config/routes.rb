@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root "pages#index"
 
-  devise_for :users    
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
   namespace :supporter do    
     resources :players, only: %i[index show]
