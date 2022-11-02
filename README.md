@@ -136,7 +136,7 @@ There should be a task responsible for deleting notifications older then one wee
 
 To delete all read notifications, run:
 
-```json
+```
 rails notifications:delete_older
 ```
 
