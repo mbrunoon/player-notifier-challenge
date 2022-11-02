@@ -27,7 +27,7 @@ class Admin::NotificationsController < ApplicationController
   end
 
   def create
-    @notification = current_user.notifications.build(notification_params)
+    @notification = Notification.new(notification_params)
 
     respond_to do |format|
       if @notification.save
@@ -68,6 +68,6 @@ class Admin::NotificationsController < ApplicationController
     end
     
     def notification_params
-      params.require(:notification).permit(:player_id, :message)
+      params.require(:notification).permit(:player_id, :message, :user_id)
     end
 end
