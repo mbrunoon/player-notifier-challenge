@@ -17,7 +17,12 @@ Rails.application.routes.draw do
     resources :players
     resources :notifications
     resources :teams    
-    resources :user_favorite_players, as: 'favorite_players'          
+    resources :user_favorite_players, as: 'favorite_players'   
+    
+    namespace :trigger do
+      patch 'notification/:id', action: "notification", as: 'notification'
+    end       
+
   end  
 
 end
