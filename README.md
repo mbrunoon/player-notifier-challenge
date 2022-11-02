@@ -36,6 +36,20 @@ The API endpoints should deliver:
 - crud endpoints for notifications
 - subscribing notifications
 
+# User access
+
+A login method used JWT was implemented. For correct API access, it is necessary to register to obtain a Token.
+
+For new Admin users, the permission must be changed directly in the database in the "role" field of the "User" model.
+
+By default, a Admin is created when `rails db:seed` is run:
+```
+email: "admin@admin.com"
+password: "admin@admin"
+````
+
+# Samples Requests
+
 A Postman API calls sample can be accessed at: [https://www.postman.com/mbrunoon/workspace/player-notifier-challenge](https://www.postman.com/mbrunoon/workspace/player-notifier-challenge)
 
 ## Admin

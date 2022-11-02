@@ -14,3 +14,5 @@ teams_and_players.each do |team|
         players_attributes: team["players"]
     })
 end
+
+User.create(email: "admin@admin.com", password: "admin@admin", name: "Admin")
