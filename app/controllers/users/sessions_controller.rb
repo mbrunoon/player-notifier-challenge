@@ -16,7 +16,10 @@ class Users::SessionsController < Devise::SessionsController
     if user && user.valid_password?(sign_in_params[:password])
       @current_user = user
     else
-      render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unprocessable_entity
+      respond_to do |format|
+        format.json { render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unprocessable_entity }
+        format.html { redirect_to new_user_session_path, alert: "Invalid email or password", status: :unprocessable_entity }
+      end      
     end
   end
 

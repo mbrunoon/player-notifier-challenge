@@ -17,4 +17,20 @@
         <% end %>
     </div>
     </header>
+    
+    <% if notice %>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-primary text-center" role="alert"><%=  notice %></div>
+            </div>
+        </div>         
+    <% end %>
+    <% if alert %>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger text-center" role="alert"><%=  alert %></div>
+            </div>
+        </div>                 
+    <% end %>     
+
 </div>
