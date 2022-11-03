@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
     end    
 
     def current_user
+        return if @current_user_id.blank?
         @current_user ||= super || User.find(@current_user_id)
     end
 
