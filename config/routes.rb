@@ -7,13 +7,15 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  namespace :supporter do    
+  namespace :supporter do  
+    root "pages#index"
     resources :players, only: %i[index show]
     resources :user_favorite_players, as: 'favorite_players', only: %i[index create destroy]
     resources :notifications, only: %i[index new create]
   end
 
-  namespace :admin do    
+  namespace :admin do  
+    root "pages#index"  
     resources :players
     resources :notifications
     resources :teams    

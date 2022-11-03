@@ -1,0 +1,2 @@
+module Supporter::PagesHelper
+end
