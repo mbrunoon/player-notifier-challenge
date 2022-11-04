@@ -7,19 +7,19 @@
 one: {
   name: "One",
   email: "one@one.com",
-  encrypted_password:  "123456789!"
+  encrypted_password: <%= User.new.send(:password_digest, '123456789!') %>
 }
 
 two: {
   name: "Two",
   email: "two@two.com",
-  encrypted_password:  "123456789!"  
+  encrypted_password: <%= User.new.send(:password_digest, '123456789!') %>
 }
 
 admin: {
   name: "Admin",
   email: "admin@admin.com",
-  encrypted_password:  "123456789!",
+  encrypted_password: <%= User.new.send(:password_digest, '123456789!') %>,
   role: "admin"
 }
 

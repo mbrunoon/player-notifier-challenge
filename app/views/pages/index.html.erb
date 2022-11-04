@@ -1,0 +1,44 @@
+<% #Sign Up  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Sign Up",
+    url: "/users",
+    method: ["post"],
+    description: "A new user will be registered.",
+    request_sample: '{
+    "user":{
+        "email": "your@email.com",
+        "password": "yourpassword",
+        "name": "Your Name"
+    }
+}',
+    response_sample: '{
+    "user": {
+        "id": 4,
+        "email": "your@email.com",
+        "name": "Your Name",
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjcyNzcyMDkzfQ.6yBwOjT0_sPs51V7xTR8zyXo1ltXPagiEONwppXr7HQ"
+    }
+}'
+} %>
+
+<% #Sign In  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Sign In",
+    url: "/users/sign_in",
+    method: ["post"],
+    description: "User login",
+    request_sample: '{
+    "user": {
+        "email": "your@email.com",
+        "password": "yourpassword"
+    }    
+}',
+    response_sample: '{
+    "user": {
+        "id": 4,
+        "email": "your@email.com",
+        "name": "Your Name",
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwiZXhwIjoxNjcyNzcyMDkzfQ.6yBwOjT0_sPs51V7xTR8zyXo1ltXPagiEONwppXr7HQ"
+    }
+}'
+} %>

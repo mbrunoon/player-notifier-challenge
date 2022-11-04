@@ -1,0 +1,51 @@
+<div>
+    <div class="row">
+        <h2><%= title %></h2>
+        <% if !description.blank? %>
+            <p><%= description %></p>
+        <% end %>
+    </div>    
+    <div class="row">
+        <p class="col-12">
+            <b>Access:</b> <i><%= url %></i>
+            <% if method.include?('get') %>
+                <span class="ms-4 badge rounded-pill text-bg-success">GET</span>
+            <% end %>
+            <% if method.include?('post') %>
+                <span class="badge rounded-pill text-bg-warning">POST</span>
+            <% end %>            
+            <% if method.include?('patch') %>
+                <span class="badge rounded-pill text-bg-secondary">PATCH</span>
+            <% end %>
+            <% if method.include?('delete') %>
+                <span class="badge rounded-pill text-bg-danger">DELETE</span>
+            <% end %>                        
+        </p>        
+    </div>
+    <div class="row">
+
+        <div class="col-6">            
+            <div class="card">
+                <div class="card-header">
+                    Request sample
+                </div>
+                <div class="card-body">
+                    <code><pre><%= request_sample %></pre></code>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">            
+            <div class="card">
+                <div class="card-header">
+                    Response sample
+                </div>
+                <div class="card-body">
+                    <code><pre><%= response_sample %></pre></code>
+                </div>
+            </div>
+        </div>
+
+    </div>    
+    <hr>
+</div>

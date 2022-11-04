@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     private
 
     def after_sign_in_path_for(user)
-      redirect_to user_redirect_by_role(user.role)
+      redirect_to root_path
     end
 
     def authenticate_user!
@@ -23,20 +23,11 @@ class ApplicationController < ActionController::Base
     end    
 
     def current_user
-        return if @current_user_id.blank?
         @current_user ||= super || User.find(@current_user_id)
     end
 
     def signed_in?
         @current_user_id.present?
-    end    
-
-    def user_redirect_by_role(role)
-      redirect_url = {
-        "admin" => admin_root_path,
-        "supporter" => supporter_root_path
-      }
-      return redirect_url[role]
-    end
+    end        
 
 end
