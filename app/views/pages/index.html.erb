@@ -42,3 +42,14 @@
     }
 }'
 } %>
+
+
+<% #Sign Out  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Sign Out",
+    url: "/users/sign_out",
+    method: ["delete"],
+    description: "User logout. Bearer Token Authentication header needed.",
+    request_sample: '',
+    response_sample: ''
+} %>
