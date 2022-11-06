@@ -1,0 +1,103 @@
+<% #Index  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Index",
+    url: "/admin/players",
+    method: ["get"],
+    description: "List all registered players",
+    request_sample: '',
+    response_sample: '[
+    {
+        "id": 1,
+        "name": "Filipe Mendes",
+        "number": 0,
+        "nationality": "Portugal",
+        "birthdate": "1985-06-17",
+        "position": "G",
+        "created_at": "2022-11-05T12:37:08.506Z",
+        "updated_at": "2022-11-05T12:37:08.506Z",
+        "team_id": 1
+    },
+    {
+        "id": 2,
+        "name": "André Geraldes",
+        "number": 28,
+        "nationality": "Portugal",
+        "birthdate": "1991-05-02",
+        "position": "D",
+        "created_at": "2022-11-05T12:37:08.509Z",
+        "updated_at": "2022-11-05T12:37:08.509Z",
+        "team_id": 1
+    }
+]'
+} %>
+
+
+<% #Create  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Create",
+    url: "/admin/players",
+    method: ["post"],
+    description: "Create a new player",
+    request_sample: '{
+    "player": {
+        "name": "Player Test",
+        "number": 10,
+        "nationality": "BR",
+        "birthdate": "07/05/1989",
+        "position": "G",        
+        "team_id": 1
+    }
+}    ',
+    response_sample: '{
+    "id": 509,
+    "name": "Player Test",
+    "number": 10,
+    "nationality": "BR",
+    "birthdate": "1989-05-07",
+    "position": "G",
+    "created_at": "2022-11-06T14:20:52.798Z",
+    "updated_at": "2022-11-06T14:20:52.798Z",
+    "team_id": 1
+}'
+} %>
+
+
+<% #Update  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Update",
+    url: "/admin/players/:id",
+    method: ["patch"],
+    description: "Update player data",
+    request_sample: '{
+    "player": {
+        "name": "Player Test Update",
+        "number": 11,
+        "nationality": "EN",
+        "birthdate": "07/05/2000",
+        "position": "M",        
+        "team_id": 10
+    }
+}',
+    response_sample: '{
+    "id": 509,
+    "name": "Player Test",
+    "number": 10,
+    "nationality": "BR",
+    "birthdate": "1989-05-07",
+    "position": "G",
+    "created_at": "2022-11-06T14:20:52.798Z",
+    "updated_at": "2022-11-06T14:20:52.798Z",
+    "team_id": 1
+}'
+} %>
+
+
+<% #Destroy  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Destroy",
+    url: "/admin/players/:id",
+    method: ["delete"],
+    description: "Destroy player from database",
+    request_sample: '',
+    response_sample: ''
+} %>

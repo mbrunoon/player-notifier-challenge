@@ -15,4 +15,4 @@ teams_and_players.each do |team|
     })
 end
 
-User.create(email: "admin@admin.com", password: "admin@admin", name: "Admin")
+User.create(email: "admin@admin.com", password: "admin@admin", name: "Admin", role: "admin")

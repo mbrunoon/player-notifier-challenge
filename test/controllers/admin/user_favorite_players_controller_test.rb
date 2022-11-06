@@ -9,16 +9,10 @@ class Admin::UserFavoritePlayersControllerTest < ActionDispatch::IntegrationTest
     @user_favorite_player = user_favorite_players(:one)
   end
 
-  test "should get JSON index" do
+  test "should get index" do
     get admin_favorite_players_url, as: :json
     assert_response :success
-  end
-
-  test "should get new" do
-    skip
-    get new_admin_favorite_player_url
-    assert_response :success
-  end
+  end  
 
   test "should create JSON user_favorite_player" do    
     assert_difference("UserFavoritePlayer.count") do
@@ -34,13 +28,7 @@ class Admin::UserFavoritePlayersControllerTest < ActionDispatch::IntegrationTest
   test "should show user_favorite_player" do
     get admin_favorite_player_url(@user_favorite_player), as: :json
     assert_response :success
-  end
-
-  test "should get edit" do
-    skip
-    get edit_admin_favorite_player_url(@user_favorite_player)
-    assert_response :success
-  end
+  end  
 
   test "should update user_favorite_player" do
     patch admin_favorite_player_url(@user_favorite_player), params: { user_favorite_player: { 

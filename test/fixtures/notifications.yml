@@ -1,6 +1,6 @@
 one:
   user: one
-  player: one
+  player: two
   message: MyText
 
 two:

@@ -1,5 +1,2 @@
-class Admin::PagesController < ApplicationController    
-
-    include Admin
-
+class Admin::PagesController < ApplicationController
 end

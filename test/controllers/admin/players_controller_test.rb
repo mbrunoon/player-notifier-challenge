@@ -9,24 +9,12 @@ class Admin::PlayersControllerTest < ActionDispatch::IntegrationTest
     @player = players(:one)
   end
 
-  test "should get JSON index" do
+  test "should get list of all players" do
     get admin_players_url, as: :json
     assert_response :success
   end
 
-  test "should get HTML index" do
-    skip
-    get admin_players_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    skip
-    get new_admin_player_url
-    assert_response :success
-  end
-
-  test "should create player by JSON" do
+  test "should create player" do
     assert_difference("Player.count") do
       post admin_players_url, params: { player: { 
         name: "Player Test", 
@@ -41,24 +29,31 @@ class Admin::PlayersControllerTest < ActionDispatch::IntegrationTest
     assert_response :created
   end
 
-  test "should show JSON player" do
+  test "should NOT create a player by non Admin user" do
+    sign_out users(:admin)
+    sign_in users(:one)
+
+    assert_no_difference("Player.count") do
+      post admin_players_url, params: { player: { 
+        name: "Player Test", 
+        number: 11,
+        nationality: "BR",
+        birthdate: (Date.today - 20.year),
+        position: "M",
+        team_id: teams(:one).id
+        }
+      }, as: :json
+    end
+    assert_response :unauthorized
+
+  end
+
+  test "should show player" do
     get admin_player_url(@player), as: :json
     assert_response :success
   end
 
-  test "should show HTML player" do
-    skip
-    get admin_player_url(@player)
-    assert_response :success
-  end  
-
-  test "should get edit" do
-    skip
-    get edit_admin_player_url(@player)
-    assert_response :success
-  end
-
-  test "should update JSON player" do    
+  test "should update player" do    
     patch admin_player_url(@player), params: { player: { 
       name: "Edit Test", 
       number: 10,
@@ -72,9 +67,9 @@ class Admin::PlayersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy JSON player" do
-    skip    
-    assert_difference("Player.count", -1) do
-      delete admin_player_url(@player), as: :json
+    player = Player.create({name: "Test deletion", number: 1, nationality: "BR", birthdate: (Date.today - 20.year), position: "M", team_id: teams(:one).id})
+    assert_difference("Player.count", -1) do      
+      delete admin_player_url(player), as: :json
     end       
   end
 

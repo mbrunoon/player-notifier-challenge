@@ -66,6 +66,8 @@ class Admin::PlayersController < ApplicationController
       format.html { redirect_to admin_players_url, notice: "Player was successfully destroyed." }
       format.json { head :no_content }
     end
+  rescue
+    
   end
 
   private

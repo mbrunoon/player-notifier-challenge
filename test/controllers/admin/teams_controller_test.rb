@@ -12,13 +12,7 @@ class Admin::TeamsControllerTest < ActionDispatch::IntegrationTest
   test "should get JSON index" do
     get admin_teams_url, as: :json
     assert_response :success
-  end
-
-  test "should get new" do
-    skip
-    get new_admin_team_url
-    assert_response :success
-  end
+  end  
 
   test "should create JSON team" do
     assert_difference("Team.count") do
@@ -36,12 +30,6 @@ class Admin::TeamsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    skip
-    get edit_admin_team_url(@team)
-    assert_response :success
-  end
-
   test "should update team" do
     patch admin_team_url(@team), params: { team: { 
       name: "Test", 
@@ -51,7 +39,6 @@ class Admin::TeamsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy admin_team" do
-    skip
     assert_difference("Team.count", -1) do
       delete admin_team_url(@team), as: :json
     end    

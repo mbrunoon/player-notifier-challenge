@@ -1,7 +1,7 @@
 module Admin
     extend ActiveSupport::Concern
 
-    included do        
+    included do
         before_action :authenticate_user!
         before_action :check_user_role
         layout 'admin'                   

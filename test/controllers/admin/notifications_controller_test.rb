@@ -9,38 +9,24 @@ class Admin::NotificationsControllerTest < ActionDispatch::IntegrationTest
     @notification = notifications(:one)
   end
 
-  test "should get JSON index" do
+  test "should get index" do
     get admin_notifications_url, as: :json
     assert_response :success
   end
 
-  test "should get new" do
-    skip
-    get new_admin_notification_url
-    assert_response :success
-  end
 
   test "should create notification by JSON" do
     assert_difference("Notification.count") do
       post admin_notifications_url, params: { notification: { 
+        user_id: users(:one).id,
         player_id: players(:one).id,
         message: "Test message"
       }}, as: :json
     end
 
     assert_response :created
-  end
+  end  
 
-  test "should show JSON notification" do
-    get admin_notification_url(@notification), as: :json
-    assert_response :success
-  end
-
-  test "should get edit" do
-    skip
-    get edit_admin_notification_url(@notification)
-    assert_response :success
-  end
 
   test "should update JSON notification" do
     patch admin_notification_url(@notification), params: { notification: { 

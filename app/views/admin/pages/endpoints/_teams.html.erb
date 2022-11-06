@@ -1,0 +1,72 @@
+<% #Index  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Index",
+    url: "/admin/teams",
+    method: ["get"],
+    description: "List all registered teams",
+    request_sample: '',
+    response_sample: '[
+    {
+        "id": 1,
+        "name": "Belenenses",
+        "acronym": "BFS",
+        "created_at": "2022-11-06T14:04:52.635Z",
+        "updated_at": "2022-11-06T14:04:52.635Z"
+    }
+]'
+} %>
+
+
+<% #Create  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Create",
+    url: "/admin/teams",
+    method: ["post"],
+    description: "Create a new team",
+    request_sample: '{
+    "team": {
+        "name": "Team Name",
+        "acronym": "TN"
+    }
+}',
+    response_sample: '{
+    "id": 19,
+    "name": "Team Name",
+    "acronym": "TN",
+    "created_at": "2022-11-06T14:48:35.513Z",
+    "updated_at": "2022-11-06T14:48:35.513Z"
+}'
+} %>
+
+
+<% #Update  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Update",
+    url: "/admin/teams/:id",
+    method: ["patch"],
+    description: "Update team data",
+    request_sample: '{
+    "team": {
+        "name": "Team Update",
+        "acronym": "TU"
+    }
+}',
+    response_sample: '{
+    "name": "Team Update",
+    "acronym": "TU",
+    "id": 19,
+    "created_at": "2022-11-06T14:48:35.513Z",
+    "updated_at": "2022-11-06T14:50:12.863Z"
+}'
+} %>
+
+
+<% #Destroy  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Destroy",
+    url: "/admin/teams/:id",
+    method: ["delete"],
+    description: "Destroy team from database",
+    request_sample: '',
+    response_sample: ''
+} %>

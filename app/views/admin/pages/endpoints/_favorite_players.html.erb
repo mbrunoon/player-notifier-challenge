@@ -1,0 +1,72 @@
+<% #Index  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Index",
+    url: "/admin/user_favorite_players",
+    method: ["get"],
+    description: "List all registered favorite users",
+    request_sample: '',
+    response_sample: '[
+    {
+        "id": 1,
+        "user_id": 1,
+        "player_id": 100,
+        "created_at": "2022-11-06T14:54:23.222Z",
+        "updated_at": "2022-11-06T14:54:23.222Z"
+    }
+]'
+} %>
+
+
+<% #Create  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Create",
+    url: "/admin/user_favorite_players",
+    method: ["post"],
+    description: "Create a new favorite user",
+    request_sample: '{
+    "user_favorite_player": {
+        "user_id": 1,
+        "player_id": 100
+    }
+}',
+    response_sample: '{
+    "id": 1,
+    "user_id": 1,
+    "player_id": 100,
+    "created_at": "2022-11-06T14:54:23.222Z",
+    "updated_at": "2022-11-06T14:54:23.222Z"
+}'
+} %>
+
+
+<% #Update  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Update",
+    url: "/admin/user_favorite_players/:id",
+    method: ["patch"],
+    description: "Update favorite user data",
+    request_sample: '{
+    "user_favorite_player": {
+        "user_id": 1,
+        "player_id": 101
+    }
+}',
+    response_sample: '{
+    "user_id": 1,
+    "player_id": 101,
+    "id": 1,
+    "created_at": "2022-11-06T14:54:23.222Z",
+    "updated_at": "2022-11-06T14:55:15.601Z"
+}'
+} %>
+
+
+<% #Destroy  %>
+<%= render partial: 'layouts/shared/doc_endpoint', locals: {
+    title: "Destroy",
+    url: "/admin/user_favorite_players/:id",
+    method: ["delete"],
+    description: "Destroy favorite user from database",
+    request_sample: '',
+    response_sample: ''
+} %>
