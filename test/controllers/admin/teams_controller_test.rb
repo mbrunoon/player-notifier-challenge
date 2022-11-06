@@ -39,8 +39,9 @@ class Admin::TeamsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy admin_team" do
+    team = Team.create(name: "Test to Destroy", acronym: "TD")
     assert_difference("Team.count", -1) do
-      delete admin_team_url(@team), as: :json
+      delete admin_team_url(team), as: :json
     end    
   end
 end
