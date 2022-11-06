@@ -172,6 +172,11 @@ A user should be notified when a notification for the players he subscribed is t
 
 A notification (email) will be send to the user when that register received a value at “read_at” field. This can be done using the Admin Trigger endpoint (/admin/trigger/notification/:id) sending a PATCH request. The Notification will be updated automatically and the email will be send to the user.
 
+# MiniTest
+
+Run `rails test` to execute all application tests.
+
+
 ---
 
 Source: [https://realfevr.github.io/challenge/](https://realfevr.github.io/challenge/)
