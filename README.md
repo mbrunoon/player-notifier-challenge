@@ -1,10 +1,13 @@
+
 # Player Notifier Challenge
 
 Every football supporter wants to know what’s happening with their favorite players. In this challenge you’ll be able to do just that!
 
+Deployed app address: https://players-notifier-challenge.herokuapp.com/
+
 # Stacks
 
-- Ruby 3.2
+- Ruby 3.1.2
 - Ruby on Rails 7.0.4
 
 # Environment Variables
@@ -19,22 +22,33 @@ MAILER_PORT = 587
 DEVISE_JWT_SECRET_KEY = yourrandomsecurecharacteres
 ```
 
-# Database seed
-
-Run `rails db:seed` to do the first database populate;
+# Installing proccess:
+- Run `git clone https://github.com/mbrunoon/player-notifier-challenge.git` to copy this project;
+- Run `bundle install` to install all necessary gems;
+- Run `gem install rails -v 7.0.4` to install the Ruby on Rails;
+- Create and configure your database credentials on file `config/database.yml`;
+- Run `rails db:create`to create the database;
+- Run `rails db:migrate`to create the database tables;
+- Run `rails db:seed` to do the first database populate;
 
 # API
 
-There should be two different frontend applications consuming the API endpoints
+There are  two different frontend applications consuming the API endpoints:
 
-- An admin one, responsible for managing players and trigger notifications
-- An user one, responsible for listing all the players and subscribing to notifications regarding some of them
+- An admin one, responsible for managing players and trigger notifications;
+- An user one, responsible for listing all the players and subscribing to notifications regarding some of them;
 
-The API endpoints should deliver:
+The API endpoints you can:
 
-- crud endpoints for players
-- crud endpoints for notifications
-- subscribing notifications
+- CRUD endpoints for players
+- CRUD endpoints for notifications
+- Subscribing notifications
+
+## Documentation
+
+You can find examples and more information on how to access the API and the endpoints on the application's main page (localhost:3000) or by accessing the demo application: https://players-notifier-challenge.herokuapp.com/
+
+Or a Postman API calls sample can be accessed at: [https://www.postman.com/mbrunoon/workspace/player-notifier-challenge](https://www.postman.com/mbrunoon/workspace/player-notifier-challenge)
 
 # User access
 
@@ -48,9 +62,7 @@ email: "admin@admin.com"
 password: "admin@admin"
 ````
 
-# Samples Requests
-
-A Postman API calls sample can be accessed at: [https://www.postman.com/mbrunoon/workspace/player-notifier-challenge](https://www.postman.com/mbrunoon/workspace/player-notifier-challenge)
+# Endpoints samples
 
 ## Admin
 
@@ -159,19 +171,6 @@ rails notifications:delete_older
 A user should be notified when a notification for the players he subscribed is triggered.
 
 A notification (email) will be send to the user when that register received a value at “read_at” field. This can be done using the Admin Trigger endpoint (/admin/trigger/notification/:id) sending a PATCH request. The Notification will be updated automatically and the email will be send to the user.
-
-## Bonus
-
-- ☑️ Sorting on player’s listing based on position, nationality or age
-- ☑️ Players listing pagination
-- ☑️ Endpoints documentation
-
-## Expectations:
-
-- ☑️ Good testing coverage
-- ☑️ Well documented code
-- ☑️ Good design options
-- ☑️ How to install and run the code
 
 ---
 
