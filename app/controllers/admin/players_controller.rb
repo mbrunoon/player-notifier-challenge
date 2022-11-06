@@ -6,10 +6,15 @@ class Admin::PlayersController < ApplicationController
 
   # GET /players or /players.json
   def index
-    @players = Player.all
+    @players = Player.all.page get_page
+    
     respond_to do |format|
       format.html
-      format.json { render json: @players }
+      format.json { render json: { 
+          current_page: @players.current_page, 
+          total_pages: @players.total_pages,
+          players: @players } 
+      }
     end
   end
 
@@ -80,4 +85,9 @@ class Admin::PlayersController < ApplicationController
     def player_params
       params.require(:player).permit(:name, :number, :nationality, :birthdate, :position, :team_id)
     end
+
+    def get_page
+      params[:page] || 1
+    end
+
 end

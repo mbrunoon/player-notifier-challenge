@@ -59,6 +59,10 @@ gem 'devise-jwt'
 
 gem 'rack-cors'
 
+# Pagination
+gem 'kaminari'
+
+
 group :development, :test do
   gem 'dotenv-rails'
 end

@@ -6,10 +6,15 @@ class Supporter::PlayersController < ApplicationController
 
   # GET /supporter/players or /supporter/players.json
   def index
-    @players = Player.all
+    @players = Player.all.page get_page
+    
     respond_to do |format|
       format.html
-      format.json {render json: @players }
+      format.json { render json: { 
+          current_page: @players.current_page, 
+          total_pages: @players.total_pages,
+          players: @players } 
+      }
     end
   end
 
@@ -25,6 +30,10 @@ class Supporter::PlayersController < ApplicationController
 
     def set_player
       @player = Player.find(params[:id])
+    end
+
+    def get_page
+      params[:page] || 1
     end
     
 end
