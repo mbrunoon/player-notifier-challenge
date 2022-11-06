@@ -3,31 +3,25 @@
     title: "Index",
     url: "/admin/players",
     method: ["get"],
-    description: "List all registered players",
+    description: "Paginated listing from all registered players. To access the other pages from Players list, use the param `page=N` where N ist the number of page. 
+    Example: localhost:3000/admin/players?page=2",
     request_sample: '',
-    response_sample: '[
-    {
-        "id": 1,
-        "name": "Filipe Mendes",
-        "number": 0,
-        "nationality": "Portugal",
-        "birthdate": "1985-06-17",
-        "position": "G",
-        "created_at": "2022-11-05T12:37:08.506Z",
-        "updated_at": "2022-11-05T12:37:08.506Z",
-        "team_id": 1
-    },
-    {
-        "id": 2,
-        "name": "André Geraldes",
-        "number": 28,
-        "nationality": "Portugal",
-        "birthdate": "1991-05-02",
-        "position": "D",
-        "created_at": "2022-11-05T12:37:08.509Z",
-        "updated_at": "2022-11-05T12:37:08.509Z",
-        "team_id": 1
-    }
-]'
+    response_sample: '{
+    "current_page": 1,
+    "total_pages": 21,
+    "players": [
+        {
+            "id": 3,
+            "name": "Fredy",
+            "number": 0,
+            "nationality": "Angola",
+            "birthdate": "1990-03-27",
+            "position": "M",
+            "created_at": "2022-11-06T14:04:52.641Z",
+            "updated_at": "2022-11-06T14:04:52.641Z",
+            "team_id": 1
+        }
+    ]
+}'
 } %>
 
